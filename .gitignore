@@ -1,3 +1,4 @@
 # Ignore items
 libraries
 io_and_wifi.txt
+*.code-workspace
