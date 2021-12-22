@@ -15,7 +15,7 @@ https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout/arduino-usage
 ## Installing an Arduino library
 https://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use/installing-a-library
 
-## The Arduino code
+## The Arduino code for the RTC
 https://github.com/adafruit/RTClib/blob/master/examples/ds3231/ds3231.ino
 
 ## Adafruit Huzzah tutorial
