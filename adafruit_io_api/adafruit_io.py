@@ -1,19 +1,31 @@
-# *********************** #
-#     Adafruit IO API     #
-#     api get adafruit    #
-#       Version: 1.0      #
-#   Author: Bruce Stull   #
-#        2022-02-05       #
-# *********************** #
+# ********************************************** #
+#                Adafruit IO API                 #
+#   api get adafruit io requests response curl   #
+#                  Version: 1.0                  #
+#              Author: Bruce Stull               #
+#                   2022-02-05                   #
+# ********************************************** #
 
 import requests
 import pprint
 
 # Resources:
-# API link:
-# https://io.adafruit.com/api/v2/FlynntKnapp/feeds/humidityesp32
+
+# Link to feeds:
+# https://io.adafruit.com/FlynntKnapp/feeds
+
 # Link to feed:
 # https://io.adafruit.com/FlynntKnapp/feeds/humidityesp32
+
+# API Documentation:
+# https://io.adafruit.com/api/docs/#adafruit-io-http-api
+
+# API link for feeds:
+# https://io.adafruit.com/api/v2/{username}/feeds
+
+# PDX requests
+# https://github.com/PdxCodeGuild/class_otter/blob/main/1%20Python/docs/15%20Requests.md
+
 
 # Using 'curl':
 # curl -H "X-AIO-Key: {io_key}" /{username}/feeds/{feed_key}
