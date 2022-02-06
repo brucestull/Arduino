@@ -1,4 +1,6 @@
 # Ignore items
+__pycache__
+the_secrets.py
 libraries
 *.code-workspace
 WIFI_IO_SETTINGS.*

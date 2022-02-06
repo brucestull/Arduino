@@ -1,0 +1,35 @@
+import pprint
+
+data = {'created_at': '2021-12-15T01:14:28Z',
+ 'description': 'Measured temperature by the Si7021 sensor connected to '
+                'Adafruit Feather Huzzah32.',
+ 'enabled': True,
+ 'feed_status_changes': [],
+ 'feed_webhook_receivers': [],
+ 'group': {'id': 55706,
+           'key': 'feather-iot',
+           'name': 'FeatherIOT',
+           'user_id': 63146},
+ 'groups': [{'id': 55706,
+             'key': 'feather-iot',
+             'name': 'FeatherIOT',
+             'user_id': 63146}],
+ 'history': True,
+ 'id': 1767913,
+ 'key': 'temperatureesp32',
+ 'last_value': '67.13',
+ 'license': None,
+ 'name': 'Temperature ESP32',
+ 'owner': {'id': 63146, 'username': 'FlynntKnapp'},
+ 'status': 'online',
+ 'status_notify': False,
+ 'status_timeout': 4320,
+ 'unit_symbol': None,
+ 'unit_type': None,
+ 'updated_at': '2022-02-06T00:20:59Z',
+ 'username': 'FlynntKnapp',
+ 'visibility': 'public',
+ 'wipper_pin_info': None,
+ 'writable': True}
+
+pprint.pprint(data)

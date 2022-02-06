@@ -6,10 +6,16 @@
 #                   2022-02-05                   #
 # ********************************************** #
 
+
 import requests
 import pprint
+import the_secrets
+
 
 # Resources:
+
+# Adafruit library resource:
+# https://github.com/adafruit/Adafruit_IO_Python
 
 # Link to feeds:
 # https://io.adafruit.com/FlynntKnapp/feeds
@@ -27,33 +33,71 @@ import pprint
 # https://github.com/PdxCodeGuild/class_otter/blob/main/1%20Python/docs/15%20Requests.md
 
 
-# Using 'curl':
-# curl -H "X-AIO-Key: {io_key}" /{username}/feeds/{feed_key}
-
-# response = requests.get('https://api.ipify.org')
-# print(response.url)
-# print(response.text)
-# print(response.status_code)
-# print(response.encoding)
-# print(response.headers)
+username = the_secrets.username
+io_key = the_secrets.io_key
 
 
-# response = requests.get('https://api.ipify.org', params={'format': 'json'})
-# print(response.url) # https://api.ipify.org/?format=json
+# ############# List of all feeds #############
+# # feeds_response.py
+# response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds", params={'x-aio-key': io_key})
+
+# # print(response.headers)
+
+# data = response.json()
+# # pprint.pprint(data)
+
+# print(f"Headers date: {response.headers['date']}")
+
+# for data_point in data:
+#   print(data_point['updated_at'])
+#   print(data_point['description'])
+#   print(data_point['id'])
+#   print(data_point['last_value'])
+# #############################################
 
 
-# curl "https://io.adafruit.com/api/v2/user_name/feeds?x-aio-key=io_key"
+############ Using feed_key ############
+feed_key = 'temperatureesp32'
+########################################
 
-username = ''
-io_key = ''
 
-response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds", params={'x-aio-key': io_key})
+# ############################ Specific feed ############################
+# # feed_response.py
+# # Seems to return the latest value and general feed information.
+# response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds/{feed_key}", params={'x-aio-key': io_key})
 
-print(response.url)
-print(response.status_code)
-print(response.encoding)
-print(response.headers)
-# print(response.text)
+# data = response.json()
+# pprint.pprint(data)
+
+# print(f"Headers date: {response.headers['date']}")
+# pprint.pprint(f"Feed name: {data['name']}")
+# pprint.pprint(f"Feed updated at: {data['updated_at']}")
+# pprint.pprint(f"Feed last value: {data['last_value']}")
+# #######################################################################
+
+
+# ##################### Details of a feed #####################
+# # feed_response_details.py
+# response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds/{feed_key}/details", params={'x-aio-key': io_key})
+
+# data = response.json()
+# pprint.pprint(data)
+
+# pprint.pprint(data['details']['data']['last'])
+# #############################################################
+
+
+##################### Request last 5 data points #####################
+# feed_response_limit_5.py
+response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds/{feed_key}/data?limit=5", params={'x-aio-key': io_key})
 
 data = response.json()
 pprint.pprint(data)
+
+print(f"Headers date: {response.headers['date']}")
+
+print(data[0]['feed_key'])
+for data_point in data:
+    print(f"{data_point['created_at']}: {data_point['value']}")
+######################################################################
+
