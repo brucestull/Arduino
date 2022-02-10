@@ -11,11 +11,23 @@ import requests
 import pprint
 import the_secrets
 
+# Virtual environment startup:
+# source C:/Users/Bruce/.virtualenvs/adafruit_io-RYTNT31i/Scripts/activate
+
+
+################## ISSUE ##################
+# It seemed that I had to set the PYTHONPATH variable again. Not sure why, yet.
+# export PYTHONPATH='C:\Users\Bruce\Programming\Arduino' <= This one worked.
+# $ echo $PYTHONPATH
+# C:\Users\Bruce\Programming\Arduino
+################ RESOLUTION ###############
+# Added path_to_modules to PYTHONPATH in User Environment Variables.
+###########################################
+
+
+
 
 # Resources:
-
-# Adafruit library resource:
-# https://github.com/adafruit/Adafruit_IO_Python
 
 # Link to feeds:
 # https://io.adafruit.com/FlynntKnapp/feeds
