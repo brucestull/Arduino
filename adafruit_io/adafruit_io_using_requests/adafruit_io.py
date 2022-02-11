@@ -88,28 +88,28 @@ feed_key = 'temperatureesp32'
 # #######################################################################
 
 
-# ##################### Details of a feed #####################
-# # feed_response_details.py
-# response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds/{feed_key}/details", params={'x-aio-key': io_key})
-
-# data = response.json()
-# pprint.pprint(data)
-
-# pprint.pprint(data['details']['data']['last'])
-# #############################################################
-
-
-##################### Request last 5 data points #####################
-# feed_response_limit_5.py
-response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds/{feed_key}/data?limit=5", params={'x-aio-key': io_key})
+##################### Details of a feed #####################
+# feed_response_details.py
+response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds/{feed_key}/details", params={'x-aio-key': io_key})
 
 data = response.json()
 pprint.pprint(data)
 
-print(f"Headers date: {response.headers['date']}")
+pprint.pprint(data['details']['data']['last'])
+#############################################################
 
-print(data[0]['feed_key'])
-for data_point in data:
-    print(f"{data_point['created_at']}: {data_point['value']}")
-######################################################################
+
+# ##################### Request last 5 data points #####################
+# # feed_response_limit_5.py
+# response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds/{feed_key}/data?limit=5", params={'x-aio-key': io_key})
+
+# data = response.json()
+# pprint.pprint(data)
+
+# print(f"Headers date: {response.headers['date']}")
+
+# print(data[0]['feed_key'])
+# for data_point in data:
+#     print(f"{data_point['created_at']}: {data_point['value']}")
+# ######################################################################
 
