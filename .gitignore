@@ -2,5 +2,6 @@
 __pycache__
 the_secrets.py
 libraries
-*.code-workspace
+*.code-
 WIFI_IO_SETTINGS.*
+*.code-workspace
