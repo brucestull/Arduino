@@ -23,7 +23,7 @@ import the_secrets
 
 ################ Set credentials and create Client ################
 # Set Adafruit username and key:
-ADAFRUIT_IO_USERNAME = the_secrets.username
+ADAFRUIT_IO_USERNAME = the_secrets.io_username
 ADAFRUIT_IO_KEY = the_secrets.io_key
 
 # Create the client:

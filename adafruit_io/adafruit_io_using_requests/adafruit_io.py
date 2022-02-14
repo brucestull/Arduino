@@ -45,31 +45,39 @@ import the_secrets
 # https://github.com/PdxCodeGuild/class_otter/blob/main/1%20Python/docs/15%20Requests.md
 
 
-username = the_secrets.username
+username = the_secrets.io_username
 io_key = the_secrets.io_key
 
 
-# ############# List of all feeds #############
-# # feeds_response.py
-# response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds", params={'x-aio-key': io_key})
+############# List of all feeds #############
+# feeds_response.py
+response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds", params={'x-aio-key': io_key})
 
-# # print(response.headers)
+# print(response.headers)
 
-# data = response.json()
-# # pprint.pprint(data)
+data = response.json()
+# pprint.pprint(data)
 
-# print(f"Headers date: {response.headers['date']}")
+print(f"Headers date: {response.headers['date']}")
 
-# for data_point in data:
-#   print(data_point['updated_at'])
-#   print(data_point['description'])
-#   print(data_point['id'])
-#   print(data_point['last_value'])
-# #############################################
+for data_point in data:
+  print(data_point['key'])
+  print(data_point['description'])
+  print(data_point['last_value'])
+  print(data_point['id'])
+  print(data_point['updated_at'])
+#############################################
 
 
 ############ Using feed_key ############
 feed_key = 'temperatureesp32'
+### List of keys ###
+# temperatureesp8266
+# humidityesp8266
+# humidityesp32
+# temperatureesp32
+# batteryvoltageesp32
+# toggle-led
 ########################################
 
 
@@ -88,15 +96,15 @@ feed_key = 'temperatureesp32'
 # #######################################################################
 
 
-##################### Details of a feed #####################
-# feed_response_details.py
-response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds/{feed_key}/details", params={'x-aio-key': io_key})
+# ##################### Details of a feed #####################
+# # feed_response_details.py
+# response = requests.get(f"https://io.adafruit.com/api/v2/{username}/feeds/{feed_key}/details", params={'x-aio-key': io_key})
 
-data = response.json()
-pprint.pprint(data)
+# data = response.json()
+# pprint.pprint(data)
 
-pprint.pprint(data['details']['data']['last'])
-#############################################################
+# pprint.pprint(data['details']['data']['last'])
+# #############################################################
 
 
 # ##################### Request last 5 data points #####################
