@@ -69,7 +69,9 @@ int brightness = 1;
 void setup()
 {
 
-#define BATPIN 13 // try using GPIO number "35" and see it if works
+//#define BATPIN 13 // try using GPIO number "35" and see it if works.
+//#define BATPIN 13 // Doesn't work properly.
+#define BATPIN A13 // This pin setting seems to work properly.
 
   // start the serial connection
   Serial.begin(115200);
