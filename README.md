@@ -22,5 +22,5 @@ https://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use/inst
 https://github.com/adafruit/RTClib/blob/master/examples/ds3231/ds3231.ino
 
 ## Adafruit Huzzah tutorials
-https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/using-arduino-ide
+https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/using-arduino-ide  
 https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/using-with-arduino-ide
