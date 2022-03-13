@@ -13,3 +13,4 @@
     - In Arduino IDE, open sketch 'SendTempToIO_ESP8266_v02.ino'.
     - Set appropriate WIFI and ADAFRUIT_IO settings in 'SendTempToIO_ESP8266_v02.ino'. These changes need to stay private, so don't commit these changes. (Need to find way to import these values)
     - Load or Compile/Upload sketch 'SendTempToIO_ESP8266_v02.ino' to 'ESP8266'.
+        - 921600 baud seems to be acceptible upload rate for ESP32.
