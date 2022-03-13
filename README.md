@@ -3,6 +3,9 @@ Repository for my Arduino (usually Adafruit hardware) projects.
 
 # Links to tutorials and information
 
+## Resetting the RTC for EST/EDT date-time changes (Need to research a possible way to automate this on the rtc.)
+https://github.com/brucestull/Arduino/blob/main/ds3231_SetTime/README.md
+
 ## Adafruit RTClib on github
 https://github.com/adafruit/RTClib
 
